@@ -1,9 +1,12 @@
-import { Module } from '@nestjs/common';
-import { UserService } from './user.service';
-import { UserController } from './user.controller';
+import { CacheModule, Module } from '@nestjs/common';
+import { FeishuService } from '../feishu/feishu.service';
+import { FeishuController } from '../feishu/feishu.controller';
 
 @Module({
-  controllers: [UserController],
-  providers: [UserService],
+  imports: [
+    CacheModule.register(),
+  ],
+  controllers: [FeishuController],
+  providers: [FeishuService],
 })
 export class UserModule {}

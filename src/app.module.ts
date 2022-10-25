@@ -4,6 +4,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { UserModule } from './user/user.module';
 import { getConfig } from './utils';
+import { FeishuModule } from './feishu/feishu.module';
 
 @Module({
   imports: [
@@ -13,6 +14,7 @@ import { getConfig } from './utils';
       load: [getConfig],
     }),
     UserModule,
+    FeishuModule,
   ],
   controllers: [AppController],
   providers: [AppService],
